@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h2>Search</h2>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+<h2>Results</h2>
+
+{% for product in results %}
+    <h4>{{ product.name }}</h4>
+    <p><strong>width</strong>: {{ product.width }}, <strong>height</strong>: {{ product.height }}, <strong>weight</strong>: {{ product.weight }}</p>
+    <p>{{ product.description }}</p>
+{% endfor %}
+
+{% endblock body %}
