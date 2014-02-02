@@ -23,7 +23,8 @@ class LoadProductData implements FixtureInterface
             $populator->addEntity('AcmeProductBundle:Product', 1000, array(
                 'width' => function() use ($generator) { return $generator->randomNumber(3); },
                 'height' => function() use ($generator) { return $generator->randomNumber(3); },
-                'weight' => function() use ($generator) { return $generator->randomNumber(2); }
+                'weight' => function() use ($generator) { return $generator->randomNumber(2); },
+                'description' => function() use ($generator) { return $generator->text(2000); },
             ));
             $populator->execute();
             $manager->clear();

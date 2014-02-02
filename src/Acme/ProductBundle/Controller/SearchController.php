@@ -20,8 +20,9 @@ class SearchController extends Controller
                 ->getDoctrine()
                 ->getRepository('AcmeProductBundle:Product')
                 ->createSearchQueryBuilder($form->getData())
-                ->setMaxResults(20);
-
+                ->orderBy('p.width', 'DESC')
+                ->setMaxResults(100);
+            var_dump($qb->getDql());
             $results = $qb->getQuery()->getResult();
         }
 
