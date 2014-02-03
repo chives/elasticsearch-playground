@@ -36,6 +36,8 @@ class SearchType extends AbstractType
         $builder->add($weight);
 
         $builder->add('search', 'submit');
+
+        $builder->add('elastic_search', 'submit');
     }
 
     /**

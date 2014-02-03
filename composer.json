@@ -20,6 +20,8 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "jms/serializer-bundle": "dev-master",
+        "friendsofsymfony/elastica-bundle": "3.0.*@dev",
         "fzaninotto/faker": "1.4.*@dev"
     },
     "scripts": {

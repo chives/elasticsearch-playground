@@ -67,3 +67,25 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_elastica:
+    serializer: ~
+    clients:
+        default:
+            host: localhost
+            port: 9200
+    indexes:
+        website:
+            client: default
+            types:
+                product:
+                    mappings:
+                        title: { boost: 5 }
+                        description: ~
+                    persistence:
+                        driver: orm
+                        model: Acme\ProductBundle\Entity\Product
+                        repository: Acme\ProductBundle\Elastica\ProductRepository
+                        provider: ~
+                        finder: ~
+                        listener: ~
