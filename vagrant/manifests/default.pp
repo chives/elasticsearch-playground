@@ -131,6 +131,7 @@ class { 'elasticsearch':
   package_url => 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.10.deb'
 }
 
-#exec { 'install marvel':
-#  command => ''
-#}
+exec { 'install marvel':
+  command => '/usr/share/elasticsearch/bin/plugin -i elasticsearch/marvel/latest',
+  notify => Service['elasticsearch'],
+}
