@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+{% endblock %}
+
 {% block body %}
 
-<h2>Search</h2>
+    {% form_theme form 'AcmeProductBundle:Form:form_div_layout.html.twig' %}
 
+<div class="container">
+<h2>Search</h2>
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
+</div>
 
+<div class="container">
 <h2>Results</h2>
 
 {% for product in results %}
@@ -16,4 +31,5 @@
     <p>{{ product.description }}</p>
 {% endfor %}
 
+</div>
 {% endblock body %}
