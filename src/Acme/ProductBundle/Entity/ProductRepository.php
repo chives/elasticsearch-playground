@@ -13,7 +13,7 @@ class ProductRepository extends EntityRepository
         if ($data['query']) {
             $qb->andWhere($qb->expr()->orX(
                 sprintf("p.name LIKE '%%%s%%'", $data['query']),
-                sprintf("p.title LIKE '%%%s%%'", $data['query'])
+                sprintf("p.description LIKE '%%%s%%'", $data['query'])
             ));
         }
 
